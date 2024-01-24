@@ -1,0 +1,94 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+
+    <style>
+        .card {
+            padding: 20px;
+            background-color: aqua;
+        }
+
+        #cardcontainer {
+            display: flex;
+            gap: 20px;
+        }
+
+        .text-red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="cardcontainer"></div>
+
+
+
+    <script>
+////////////////////////////////////////// common-card-with-for-each-loop//////////////////////////////////////////
+        const myarr = [
+            {
+                name: "ritik",
+                age: 12,
+                img: "https://img.freepik.com/free-photo/silhouette-palm-tree-galaxy-sky-sunset_181624-24503.jpg?w=740&t=st=1706076222~exp=1706076822~hmac=e438d6ee73eb8225cd54442c1308daea1fae51a69bf7d759ee20f9af61f6a5e3",
+                about: "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos adipisci quaerat illum cumque explicabo saepe libero. Quo, dolores animi similique at magni impedit fugiat quos, dolorem repudiandae, laboriosam delectus expedita?"
+            },
+            {
+                name: "inder",
+                age: 12,
+                img: "https://img.freepik.com/free-photo/silhouette-palm-tree-galaxy-sky-sunset_181624-24503.jpg?w=740&t=st=1706076222~exp=1706076822~hmac=e438d6ee73eb8225cd54442c1308daea1fae51a69bf7d759ee20f9af61f6a5e3",
+                about: "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos adipisci quaerat illum cumque explicabo saepe libero. Quo, dolores animi similique at magni impedit fugiat quos, dolorem repudiandae, laboriosam delectus expedita?"
+            },
+            {
+                name: "inder",
+                age: 12,
+                img: "https://img.freepik.com/free-photo/silhouette-palm-tree-galaxy-sky-sunset_181624-24503.jpg?w=740&t=st=1706076222~exp=1706076822~hmac=e438d6ee73eb8225cd54442c1308daea1fae51a69bf7d759ee20f9af61f6a5e3",
+                about: "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos adipisci quaerat illum cumque explicabo saepe libero. Quo, dolores animi similique at magni impedit fugiat quos, dolorem repudiandae, laboriosam delectus expedita?"
+            },
+        ]
+
+        const cardContainer = document.getElementById("cardcontainer");
+
+
+
+
+        myarr.forEach((element, index) => {
+            const cardelement = document.createElement("div");
+            cardelement.className = "card"
+            cardelement.innerHTML = `
+            <img width="100%" height="300" src=${element.img} alt="img"/>
+            <h3>${element.name}</h3>
+            <p>${element.age}</p>
+            <p>${element.about}</p>`
+            cardContainer.appendChild(cardelement)
+        })
+    </script>
+
+<script>
+    //////////////////////////////////////// with for loop////////////////////////
+    const myarray = [{
+        name: "inder",
+        age: 23,
+        role: "developer",
+    },
+    {
+        name: "vishal",
+        age: 16,
+        role: "developer",
+    },
+    ]
+    const cardelements = document.getElementById("cardcontainer")
+    for (let i = 0; i < myarray.length; i++)  {
+        const cardelement = document.createElement("div");
+        cardelement.className = "card"
+        cardelement.innerHTML = `
+        <h3>${myarray[i].name}</h3>
+        <p>${myarray[i].age}</p>
+        <p>${myarray[i].role}</p>`
+        cardelements.appendChild(cardelement)
+    }
+</script>
+</body>
+</html>
